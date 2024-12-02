@@ -1,0 +1,8 @@
+Step	Impact with Sniffed Token
+1. Client Hello	No Impact: The client hello does not involve sensitive data or tokens.
+2. Server Hello	No Impact: The server sends its public certificate and encryption method, and no tokens are involved here.
+3. Server Certificate Verification	No Impact: This step does not involve the token; the client is only validating the server's public certificate.
+4. Certificate Request	No Impact: Tokens are not typically exchanged during this step; the server requests the client certificate.
+5. Client Certificate and Key Exchange	No Impact: If the attacker cannot access the client’s private key, they cannot impersonate the client or decrypt traffic.
+6. Client Certificate Verification	No Impact: Tokens are not part of this verification process; the server validates the client certificate.
+7. Secure Connection Established	Potential Impact: If the token sniffed by the attacker is a session token or used for authentication in application-level protocols, they might reuse it to impersonate the client.
